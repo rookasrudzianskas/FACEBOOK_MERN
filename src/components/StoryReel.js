@@ -20,6 +20,18 @@ const StoryReel = () => {
                 profileSrc='https://miro.medium.com/fit/c/336/336/2*4lH0jftaq_sPRqQisUsVqw.jpeg'
                 title='Nazariy Dumanskyy '
             />
+
+            <Story
+                image='https://cdn.shopify.com/s/files/1/0128/3672/products/DIMENSIONAL_ABSTRACT_PORTRAIT_no._IV_1024x1024.png?v=1507719723'
+                profileSrc='https://miro.medium.com/fit/c/336/336/2*4lH0jftaq_sPRqQisUsVqw.jpeg'
+                title='Nazariy Dumanskyy '
+            />
+
+            <Story
+                image='https://cdn.shopify.com/s/files/1/0128/3672/products/DIMENSIONAL_ABSTRACT_PORTRAIT_no._IV_1024x1024.png?v=1507719723'
+                profileSrc='https://miro.medium.com/fit/c/336/336/2*4lH0jftaq_sPRqQisUsVqw.jpeg'
+                title='Nazariy Dumanskyy '
+            />
         </div>
     );
 };
