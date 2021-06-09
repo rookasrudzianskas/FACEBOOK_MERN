@@ -73,3 +73,8 @@
     color: #2e81f4;
     transition: all 0.1s;
 }
+
+.header__info {
+    display: flex;
+    align-items: center;
+}
