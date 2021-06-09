@@ -40,7 +40,30 @@ const Header = () => {
                 <div className="header__option">
                     <SupervisedUserCircleIcon fontSize='large' />
                 </div>
-            </div>S
+            </div>
+
+            <div className="header__right">
+                <div className="header__info">
+                    <Avatar src="https://pbs.twimg.com/profile_images/1350895249678348292/RS1Aa0iK_400x400.jpg" />
+                    <h4>Rokas Rudzianskas</h4>
+                </div>
+
+                <IconButton>
+                    <AddIcon />
+                </IconButton>
+
+                <IconButton>
+                    <ForumIcon />
+                </IconButton>
+
+                <IconButton>
+                    <NotificationsActiveIcon />
+                </IconButton>
+
+                <IconButton>
+                    <ExpandMoreIcon />
+                </IconButton>
+            </div>
 
         </div>
     );
