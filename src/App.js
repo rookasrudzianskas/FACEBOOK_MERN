@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import React from "react"
 import Sidebar from "./components/Sidebar";
 import Feed from "./components/Feed";
+import Widget from "./components/Widget";
 function App() {
   return (
     <div className="app">
@@ -12,6 +13,7 @@ function App() {
         <Sidebar />
 
         <Feed />
+          <Widget />
       </div>
     </div>
   );

@@ -1,0 +1,10 @@
+.widgets {
+    display: flex;
+    flex-direction: column;
+    flex: 0.2;
+    margin-right: 15px;
+    margin-top: 20px;
+    position: sticky;
+    top: 0;
+    right: 0;
+}
