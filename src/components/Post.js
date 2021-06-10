@@ -19,6 +19,7 @@ const Post = ({ profilePic, imgName, username, timestamp, message }) => {
             </div>
             <div className="post__bottom">
                 <p>{message}</p>
+            {/*    image goes in here*/}
             </div>
 
 
