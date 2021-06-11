@@ -13,6 +13,7 @@ function App() {
         <Sidebar />
         {/*  this is new*/}
         {/*  this is new*/}
+        {/*  this is new*/}
 
         <Feed />
           <Widget />
