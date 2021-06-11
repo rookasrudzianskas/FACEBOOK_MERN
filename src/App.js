@@ -11,9 +11,11 @@ function App() {
       <Header />
       <div className="app__body">
         <Sidebar />
+        {/*  this is new*/}
 
         <Feed />
           <Widget />
+
       </div>
     </div>
   );
