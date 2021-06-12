@@ -16,7 +16,8 @@ function App() {
         {/*  this is new*/}
         {/*  this is new*/}
         {/*  this is new*/}
-
+        {/*  this is new */}
+        {/* this is completely new stuff which is coming on*/}
         <Feed />
           <Widget />
 
