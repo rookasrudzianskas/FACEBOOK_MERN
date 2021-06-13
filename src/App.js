@@ -12,19 +12,8 @@ function App() {
       <div className="app__body">
         <Sidebar />
         {/*  this is new*/}
-        {/*  this is new*/}
-        {/*  this is new*/}
-        {/*  this is new*/}
-        {/*  this is new*/}
-        {/*  this is new */}
-        {/* this is completely new stuff which is coming on*/}
-        {/*  the stuff is coming on in here*/}
-        {/*  the stuff is coming on in here*/}
-        {/*  the stuff is coming on in here*/}
-        {/*  the stuff is coming on in here*/}
-        {/*  the stuff is coming on in here*/}
-        {/*  the stuff is coming on in here*/}
-        {/*  the sutff is coming on in here*/}
+
+
         <Feed />
           <Widget />
 
