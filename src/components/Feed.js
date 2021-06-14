@@ -24,6 +24,13 @@ const Feed = () => {
     }
 
     useEffect(() => {
+        const channel = pusher.subscribe('posts');
+        channel.bind('inserted', function(data) {
+            syncFeed();
+        });
+    }, [])
+
+    useEffect(() => {
         syncFeed();
     }, []);
 
