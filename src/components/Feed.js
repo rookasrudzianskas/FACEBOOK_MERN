@@ -1,10 +1,19 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import "./styles/Feed.css";
 import StoryReel from "./StoryReel";
 import MessageSender from "./MessageSender";
 import Post from "./Post";
 
 const Feed = () => {
+
+    const [profilePic, setProfilePic] = useState('');
+    const [postsData, setPostsData] = useState([]);
+
+    useEffect(() => {
+        db.collection('posts').onSnapshot(snapshot => {
+            setPostsData(snapshot.docs.map(doc => ({id: doc.id, data: doc.data() })));
+        })
+    }, []);
     return (
         <div className="feed">
             <StoryReel />
