@@ -3,23 +3,33 @@ import Header from "./components/Header";
 import React from "react"
 import Sidebar from "./components/Sidebar";
 import Feed from "./components/Feed";
+import {useStateValue} from "./StateProvider";
 import Widget from "./components/Widget";
+import Login from "./components/Login";
+
 function App() {
-  return (
-    <div className="app">
+    const [{ user }, dispatch] = useStateValue()
 
-      <Header />
-      <div className="app__body">
-        <Sidebar />
-        {/*  this is new*/}
+    return (
+        <div className="App">
+            {
+                user ? (
+                    <>
+                        <Header />
 
+                        <div className="app__body">
+                            <Sidebar />
+                            <Feed />
+                            <Widget />
+                        </div>
+                    </>
+                ) : (
+                    <Login />
+                )
+            }
 
-        <Feed />
-          <Widget />
-
-      </div>
-    </div>
-  );
+        </div>
+    );
 }
 
 export default App;
