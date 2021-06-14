@@ -26,6 +26,14 @@ const MessageSender = () => {
         if(image){
             const imgForm = new FormData();
             imgForm.append('file', image, image.name);
+
+            axios.post('/upload/image', imgForm, {
+                headers: {
+                    'accept': 'application/json',
+                    'Accept-Language': 'en-US, en;q=0.8',
+                    'Content-Type':`multipart/form-data; boundary=${imgForm._boundary}`,
+                }
+            })
         }
 
         setImageUrl('');
