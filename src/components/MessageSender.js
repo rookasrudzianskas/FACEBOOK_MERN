@@ -6,6 +6,7 @@ import VideocamIcon from '@material-ui/icons/Videocam'
 import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary'
 import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon'
 import {useStateValue} from "../StateProvider";
+import axios from "../axios";
 
 const MessageSender = () => {
 
@@ -33,13 +34,42 @@ const MessageSender = () => {
                     'Accept-Language': 'en-US, en;q=0.8',
                     'Content-Type':`multipart/form-data; boundary=${imgForm._boundary}`,
                 }
+            }).then((res) => {
+                console.log(res.data);
+
+                const postData = {
+                    text: input,
+                    imgName: res.data.filename,
+                    user: user.displayName,
+                    avatar: user.photoURL,
+                    timestamp: Date.now(),
+                }
+
+                console.log(postData);
+                savePost(postData);
             })
+        } else {
+            const postData = {
+                text: input,
+                user: user.displayName,
+                avatar: user.photoURL,
+                timestamp: Date.now(),
+            }
+
+            console.log(postData);
+            savePost(postData);
         }
 
         setImageUrl('');
         setInput('');
         setImage('');
 
+    }
+
+    const savePost = async (postData) => {
+        await axios.post('/upload/post', postData).then((resp) => {
+            console.log(resp);
+        })
     }
     return (
         <div className="messageSender">

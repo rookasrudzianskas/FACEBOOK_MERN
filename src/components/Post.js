@@ -22,7 +22,7 @@ const Post = ({ profilePic, imgName, username, timestamp, message }) => {
             {/*    image goes in here*/}
                 {imgName ? (
                     <div className="post__image">
-                        <img src={`/api/retrieve/images/single?name=${imgName}`} alt=""/>
+                        <img src={`http://localhost:9000/retrieve/image/single?name=${imgName}`} alt=""/>
                     </div>
                 ) : (
                     console.log('THERE is nothing here')
