@@ -8,12 +8,15 @@ import StorefrontIcon from '@material-ui/icons/Storefront';
 import VideoLibraryIcon from '@material-ui/icons/VideoLibrary';
 import ExpandMoreOutlined from '@material-ui/icons/ExpandMoreOutlined';
 import SidebarRow from "./SidebarRow";
+import {useStateValue} from "../StateProvider";
 
 const Sidebar = () => {
+    const [{user}, display] = useStateValue();
+
     return (
         <div className="sidebar">
             {/* <SidebarRow src={user.photoURL} title={user.displayName} /> */}
-            <SidebarRow src="https://pbs.twimg.com/profile_images/1350895249678348292/RS1Aa0iK_400x400.jpg" title="Rokas" />
+            <SidebarRow src={user.photoURL} title={user.displayName} />
             <SidebarRow Icon={LocalHospitalIcon} title='COVID-19 Information Center' />
 
             <SidebarRow Icon={EmojiFlagsIcon} title='Pages' />

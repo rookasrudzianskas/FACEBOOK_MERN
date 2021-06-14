@@ -5,11 +5,14 @@ import { Input } from '@material-ui/core'
 import VideocamIcon from '@material-ui/icons/Videocam'
 import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary'
 import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon'
+import {useStateValue} from "../StateProvider";
 
 const MessageSender = () => {
 
     const [input, setInput] = useState('');
     const [image, setImage] = useState(null);
+    const [imageUrl, setImageUrl] = useState('');
+    const [{user}, dispatch] = useStateValue();
 
     const handleChange = (e) => {
         if(e.target.files[0]) {
@@ -19,6 +22,15 @@ const MessageSender = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        if(image){
+            const imgForm = new FormData();
+            imgForm.append('file', image, image.name);
+        }
+
+        setImageUrl('');
+        setInput('');
+        setImage('');
 
     }
     return (

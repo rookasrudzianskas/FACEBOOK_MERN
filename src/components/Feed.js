@@ -3,22 +3,32 @@ import "./styles/Feed.css";
 import StoryReel from "./StoryReel";
 import MessageSender from "./MessageSender";
 import Post from "./Post";
+import db from "../firebase";
+import axios from "../axios";
 
 const Feed = () => {
 
     const [profilePic, setProfilePic] = useState('');
     const [postsData, setPostsData] = useState([]);
 
-    useEffect(() => {
-        db.collection('posts').onSnapshot(snapshot => {
-            setPostsData(snapshot.docs.map(doc => ({id: doc.id, data: doc.data() })));
+    const syncFeed = () => {
+        axios.get('/retrieve/posts').then((response) => {
+            console.log(response.data);
+            setPostsData(response.data);
         })
+    }
+
+    useEffect(() => {
+        syncFeed();
     }, []);
+
     return (
         <div className="feed">
             <StoryReel />
             <MessageSender />
-            <Post profilePic="https://pbs.twimg.com/profile_images/1350895249678348292/RS1Aa0iK.jpg" message="Youu this is working" timestamp="example one" imgName="imgName" username="Rokas" />
+            {postsData.map(entry => (
+                <Post profilePic={entry.avatar} message={entry.text} timestamp={entry.timestamp} imgName={entry.imgName} username={entry.user} />
+            ))}
         </div>
     );
 };
