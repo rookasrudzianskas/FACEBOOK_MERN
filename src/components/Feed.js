@@ -5,6 +5,11 @@ import MessageSender from "./MessageSender";
 import Post from "./Post";
 import db from "../firebase";
 import axios from "../axios";
+import Pusher from 'pusher-js';
+
+const pusher = new Pusher('0fb031a64d5b7209ef0f', {
+    cluster: 'mt1'
+});
 
 const Feed = () => {
 
